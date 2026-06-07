@@ -736,15 +736,12 @@ input, select, textarea {
 			}
 
 			.image.main.carousel .carousel-dots {
-				bottom: 1rem;
 				display: flex;
 				gap: 0.5rem;
 				justify-content: center;
-				left: 50%;
-				position: absolute;
-				transform: translateX(-50%);
+				margin: 1rem auto 0;
 				width: auto;
-				z-index: 1;
+				position: relative;
 			}
 
 			.image.main.carousel .carousel-dot {
