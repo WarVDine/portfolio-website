@@ -1672,11 +1672,11 @@ input, select, textarea {
 	padding-bottom: 3rem;
 }
 
-.image.main.mydish {
+.image.main.side-by-side-images {
 	display: flex;
 	justify-content: space-evenly;
 }
-.image.main.mydish img {
+.image.main.side-by-side-images img {
 	/* margin: 0 0.5rem; */
 	max-width: 40%;
 	max-height: 400px;
