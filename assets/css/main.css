@@ -688,6 +688,79 @@ input, select, textarea {
 				margin: 0 auto;
 			}
 
+			.image.main.carousel:before {
+				display: none;
+			}
+
+			.image.main.carousel {
+				overflow: hidden;
+				position: relative;
+			}
+
+			.image.main.carousel .carousel-track {
+				display: flex;
+				transition: transform 0.5s ease;
+			}
+
+			.image.main.carousel .carousel-slide {
+				flex: 0 0 100%;
+			}
+
+			.image.main.carousel .carousel-slide img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			.image.main.carousel .carousel-control {
+				background: rgba(27, 31, 34, 0.8);
+				border: 0;
+				color: #fff;
+				cursor: pointer;
+				height: 40px;
+				line-height: 1;
+				padding: 0 0.85rem;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: auto;
+				z-index: 1;
+			}
+
+			.image.main.carousel .carousel-control.prev {
+				left: 0.5rem;
+			}
+
+			.image.main.carousel .carousel-control.next {
+				right: 0.5rem;
+			}
+
+			.image.main.carousel .carousel-dots {
+				bottom: 1rem;
+				display: flex;
+				gap: 0.5rem;
+				justify-content: center;
+				left: 50%;
+				position: absolute;
+				transform: translateX(-50%);
+				width: auto;
+				z-index: 1;
+			}
+
+			.image.main.carousel .carousel-dot {
+				background: rgba(255, 255, 255, 0.35);
+				border: 0;
+				border-radius: 50%;
+				cursor: pointer;
+				height: 12px;
+				width: 12px;
+				padding: 0;
+			}
+
+			.image.main.carousel .carousel-dot.active {
+				background: #ffffff;
+			}
+
 		@media screen and (max-width: 736px) {
 
 			.image.main {

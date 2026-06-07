@@ -391,7 +391,53 @@
 			// Hide main, articles.
 				$main.hide();
 				$main_articles.hide();
+				// Carousel helper.
+				function initCarousels() {
+					$('[data-carousel]').each(function() {
+						var $carousel = $(this);
+						var $track = $carousel.find('.carousel-track');
+						var $slides = $carousel.find('.carousel-slide');
+						var $dots = $carousel.find('.carousel-dot');
+						var slideCount = $slides.length;
+						var activeIndex = 0;
 
+						function getSlideWidth() {
+							return $carousel.width();
+						}
+
+						function updateSlide(index) {
+							activeIndex = (index + slideCount) % slideCount;
+							var offset = -activeIndex * getSlideWidth();
+							$track.css('transform', 'translateX(' + offset + 'px)');
+							$slides.removeClass('active').eq(activeIndex).addClass('active');
+							$dots.removeClass('active').eq(activeIndex).addClass('active');
+						}
+
+						$window.on('resize', function() {
+							updateSlide(activeIndex);
+						});
+
+						$carousel.find('.carousel-control.prev').on('click', function(event) {
+							event.stopPropagation();
+							updateSlide(activeIndex - 1);
+						});
+
+						$carousel.find('.carousel-control.next').on('click', function(event) {
+							event.stopPropagation();
+							updateSlide(activeIndex + 1);
+						});
+
+						$dots.on('click', function(event) {
+							event.stopPropagation();
+							updateSlide($(this).index());
+						});
+
+						// Ensure default active state.
+						updateSlide(activeIndex);
+					});
+				}
+
+				initCarousels();
 			// Initial article.
 				if (location.hash != ''
 				&&	location.hash != '#')
